@@ -1,0 +1,13 @@
+version: '3'
+services:
+  electrum:
+    image: electrum-nmc
+    container_name: nmc
+    ports:
+      - 127.0.0.1:7000:7000
+    environment:
+      - ELECTRUM_USER=electrum
+      - ELECTRUM_PASSWORD=electrumz
+      - TESTNET="False"
+    volumes:
+      - ./data:/data
