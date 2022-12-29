@@ -10,4 +10,4 @@ services:
       - ELECTRUM_PASSWORD=electrumz
       - TESTNET="False"
     volumes:
-      - ./data:/data
+      - ./config/electrum-nmc:/data/electrum-nmc

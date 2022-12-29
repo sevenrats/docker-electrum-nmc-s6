@@ -22,6 +22,8 @@ RUN \
 	pip3 install Electrum-NMC-4.0.0b1.tar.gz pycryptodomex && \
 	rm -f Electrum-NMC-4.0.0b1.tar.gz && \
 	apk del build-dependencies && \
+	cd / && \
+	wget https://github.com/sevenrats/signalproxy.sh/blob/main/signalproxy.sh && \
 	rm -rf \
 		/tmp/* \
 		/root/.cache
@@ -35,7 +37,8 @@ mkdir -p /data \
 	${ELECTRUM_HOME}/.electrum/simnet/wallets/ && \
 ln -sf ${ELECTRUM_HOME}/.electrum/ /data && \
 chown -R ${ELECTRUM_USER} ${ELECTRUM_HOME}/.electrum /data && \
-ln -sf /usr/local/bin/electrum-nmc /usr/local/bin/nmc
+ln -sf /usr/local/bin/electrum-nmc /usr/local/bin/nmc && \
+mkdir /data/electrum-nmc
 
 USER $ELECTRUM_USER
 WORKDIR $ELECTRUM_HOME
