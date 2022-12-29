@@ -23,7 +23,7 @@ RUN \
 	rm -f Electrum-NMC-4.0.0b1.tar.gz && \
 	apk del build-dependencies && \
 	cd / && \
-	wget https://github.com/sevenrats/signalproxy.sh/blob/main/signalproxy.sh && \
+	wget https://raw.githubusercontent.com/sevenrats/signalproxy.sh/main/signalproxy.sh && \
 	rm -rf \
 		/tmp/* \
 		/root/.cache
