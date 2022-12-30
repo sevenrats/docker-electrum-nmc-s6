@@ -2,7 +2,7 @@
 set -ex
 # Proxy signals
 sp_processes=("electrum-nmc")
-. ./signalproxy.sh
+. /signalproxy.sh
 
 # Overload Traps
   #none
