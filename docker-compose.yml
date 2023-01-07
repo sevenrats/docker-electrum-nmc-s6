@@ -4,10 +4,9 @@ services:
     image: electrum-nmc
     container_name: nmc
     ports:
-      - 127.0.0.1:7000:7000
+      - 127.0.0.1:8334:8334
     environment:
-      - ELECTRUM_USER=electrum
-      - ELECTRUM_PASSWORD=electrumz
-      - TESTNET="False"
+      - ELECTRUM_USER=namecoin
+      - ELECTRUM_PASSWORD=namecoinz
     volumes:
       - ./config/electrum-nmc:/data/electrum-nmc

@@ -1,16 +1,13 @@
-FROM python:3.9.1-alpine
+FROM python:3.9-alpine3.16
 ARG BUILD_DATE
-ARG VERSION
 LABEL	maintainer="sevenrats" \
 		build-date=$BUILD_DATE \
 		name="Electrum-NMC" \
-		description="Electrum-NMC with JSON-RPC enabled" \
-		version=$VERSION \
-		license="MIT"
+		description="Electrum-NMC with JSON-RPC enabled"
 
-ENV ELECTRUM_VERSION $VERSION
-ENV ELECTRUM_USER electrum
-ENV ELECTRUM_PASSWORD electrumz
+ENV ELECTRUM_VERSION "4.0.0b1"
+ENV ELECTRUM_USER namecoin
+ENV ELECTRUM_PASSWORD namecoinz
 ENV ELECTRUM_HOME /home/$ELECTRUM_USER
 ENV ELECTRUM_NETWORK mainnet
 
@@ -18,9 +15,9 @@ RUN \
 	echo "**** install electrum-nmc ****" && \
 	apk --no-cache add --virtual build-dependencies gcc musl-dev && \
 	apk --no-cache add libsecp256k1-dev bash catatonit procps && \
-	wget https://www.namecoin.org/files/electrum-nmc/electrum-nmc-4.0.0b1/Electrum-NMC-4.0.0b1.tar.gz && \
-	pip3 install Electrum-NMC-4.0.0b1.tar.gz pycryptodomex && \
-	rm -f Electrum-NMC-4.0.0b1.tar.gz && \
+	wget https://www.namecoin.org/files/electrum-nmc/electrum-nmc-${ELECTRUM_VERSION}/Electrum-NMC-${ELECTRUM_VERSION}.tar.gz && \
+	pip3 install Electrum-NMC-${ELECTRUM_VERSION}.tar.gz pycryptodomex && \
+	rm -f Electrum-NMC-${ELECTRUM_VERSION}.tar.gz && \
 	apk del build-dependencies && \
 	cd / && \
 	wget https://raw.githubusercontent.com/sevenrats/signalproxy.sh/main/signalproxy.sh && \

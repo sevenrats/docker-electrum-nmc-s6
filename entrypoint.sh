@@ -22,7 +22,7 @@ fi
 electrum-nmc $FLAGS --offline setconfig rpcuser ${ELECTRUM_USER}
 electrum-nmc $FLAGS --offline setconfig rpcpassword ${ELECTRUM_PASSWORD}
 electrum-nmc $FLAGS --offline setconfig rpchost 0.0.0.0
-electrum-nmc $FLAGS --offline setconfig rpcport 7000
+electrum-nmc $FLAGS --offline setconfig rpcport 8334
 
 # Run application
 electrum-nmc $FLAGS daemon & \
