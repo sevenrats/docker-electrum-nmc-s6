@@ -26,16 +26,10 @@ RUN \
 		/root/.cache
 
 RUN \
+mkdir -p /data/electrum-nmc ${ELECTRUM_HOME} && \
+ln -sf /data/electrum-nmc ${ELECTRUM_HOME}/.electrum-nmc && \
 adduser -D $ELECTRUM_USER && \
-mkdir -p /data \
-	${ELECTRUM_HOME}/.electrum/wallets/ \
-	${ELECTRUM_HOME}/.electrum/testnet/wallets/ \
-	${ELECTRUM_HOME}/.electrum/regtest/wallets/ \
-	${ELECTRUM_HOME}/.electrum/simnet/wallets/ && \
-ln -sf ${ELECTRUM_HOME}/.electrum/ /data && \
-chown -R ${ELECTRUM_USER} ${ELECTRUM_HOME}/.electrum /data && \
-ln -sf /usr/local/bin/electrum-nmc /usr/local/bin/nmc && \
-mkdir /data/electrum-nmc
+chown -R ${ELECTRUM_USER} ${ELECTRUM_HOME}/.electrum-nmc /data
 
 USER $ELECTRUM_USER
 WORKDIR $ELECTRUM_HOME
