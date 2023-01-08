@@ -35,7 +35,7 @@ services:
 
 #### Commands
 ```bash
-curl --data-binary '{"id":"1","method":"listaddresses"}' http://electrum:electrumz@localhost:7000
+curl --data-binary '{"id":"1","method":"listaddresses"}' http://electrum:electrumz@localhost:8334
 ```
 ```bash
 docker exec electrum-nmc nmc create
@@ -62,7 +62,7 @@ docker exec -it electrum-nmc nmc getinfo
 :exclamation:**Warning**:exclamation:
 
 As built, the electrum-nmc daemon listens on 0.0.0.0
-You should limit access to port 7000 for security reasons.
+You should limit access to port 8334 for security reasons.
 
 ## API
 
