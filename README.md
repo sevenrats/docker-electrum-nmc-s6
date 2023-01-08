@@ -6,11 +6,11 @@
 
 ### Ports
 
-* `7000` - JSON-RPC port.
+* `8334` - JSON-RPC port.
 
 ### Volumes
 
-* The internal paths `/data` and ``/home/user/.electrum`` are linked within the container. Mount your data directory to either one.
+* The internal paths `/data/electrum-nmc` and ``/home/namecoin/.electrum-nmc`` are linked within the container. Mount your data directory to either one.
 
 ## Getting started
 
@@ -23,7 +23,7 @@ services:
     image: electrum-nmc
     container_name: electrum-nmc
     ports:
-      - 127.0.0.1:7000:7000
+      - 127.0.0.1:8334:8334
     environment:
       - ELECTRUM_USER=electrum
       - ELECTRUM_PASSWORD=electrumz
