@@ -5,7 +5,7 @@ LABEL	maintainer="sevenrats" \
 		name="Electrum-NMC" \
 		description="Electrum-NMC with JSON-RPC enabled"
 
-ENV VERSION_TAG "nc4.0.1"
+ENV VERSION_TAG "nc4.0.6"
 ENV ELECTRUM_USER namecoin
 ENV ELECTRUM_PASSWORD namecoinz
 ENV ELECTRUM_HOME /home/$ELECTRUM_USER
