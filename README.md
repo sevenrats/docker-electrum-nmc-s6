@@ -42,6 +42,7 @@ docker exec electrum-nmc nmc create
 docker exec electrum-nmc nmc load_wallet
 ```
 ```bash
+
 docker exec -it electrum-nmc nmc getinfo
 {
     "auto_connect": true,

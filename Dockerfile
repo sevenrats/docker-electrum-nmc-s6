@@ -17,9 +17,7 @@ RUN \
 	apk --no-cache add libsecp256k1-dev bash catatonit procps && \
     git clone --depth 1 --branch  ${VERSION_TAG} https://github.com/namecoin/electrum-nmc.git && \
 	pip3 install ./electrum-nmc pycryptodomex && \
-    git clone --depth 1 https://github.com/sevenrats/bash-signal-proxy.git && \
-    cp bash-signal-proxy/signalproxy.sh / && \
-	rm -rf electrum-nmc  bash-signal-proxy && \
+	rm -rf electrum-nmc && \
 	apk del .build-deps && \
 	rm -rf \
 		/tmp/* \
